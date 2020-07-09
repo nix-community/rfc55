@@ -42,7 +42,7 @@ def main() -> None:
         commits = nixpkgs.get_commits(author=member, since=start_of_year)
         if not has_commits(commits):
             print(
-                f"{member.login:<20} https://github.com/NixOS/nixpkgs/commits?author={member.login}"
+                f"- @{member.login:<20} [commits](https://github.com/NixOS/nixpkgs/commits?author={member.login})"
             )
 
 

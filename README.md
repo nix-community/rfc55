@@ -11,7 +11,7 @@ Make sure to enable the read:org scope
 ```
 $ export GITHUB_TOKEN=<insert-token-here>
 $ nix-build
-$ ./result
+$ ./result/bin/inactive-maintainers
 ```
 
 
