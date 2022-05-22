@@ -38,7 +38,11 @@ def main() -> None:
     committers = org.get_team_by_slug("nixpkgs-committers").get_members()
     sorted_committers = sorted(list(committers), key=lambda c: c.login.lower())
 
+    blacklist = ["GrahamcOfBorg"]
+
     for member in sorted_committers:
+        if member in blacklist:
+            continue
         commits = nixpkgs.get_commits(author=member, since=start_of_year)
         if not has_commits(commits):
             print(
