@@ -41,13 +41,18 @@ def main() -> None:
     blacklist = ["GrahamcOfBorg"]
 
     for member in sorted_committers:
-        if member in blacklist:
+        if member.login in blacklist:
             continue
         commits = nixpkgs.get_commits(author=member, since=start_of_year)
         if not has_commits(commits):
-            print(
-                f"- @{member.login:<20} [commits](https://github.com/NixOS/nixpkgs/commits?author={member.login})"
-            )
+            if member.login == "lf-": # broken github api? https://github.com/NixOS/nixpkgs/issues/88867#issuecomment-2603174426
+               print(
+                   f"- @{member.login:<20} [commits](https://github.com/NixOS/nixpkgs/commits?author={member.login}) -> actual check the link here, api is broken"
+               )
+            else:
+               print(
+                   f"- @{member.login:<20} [commits](https://github.com/NixOS/nixpkgs/commits?author={member.login})"
+               )
 
 
 if __name__ == "main":
