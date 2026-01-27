@@ -1,3 +1,6 @@
+> [!Note]
+> This repository is archived because equivalent functionality has been incorporated into https://github.com/nixos/nixpkgs-committers 
+
 # Implementation of RFC 55 
 
 This is a script to find inactive nixpkgs maintainers as part of [RFC-55 - Retire inactive nixpkgs committers](https://github.com/NixOS/rfcs/blob/master/rfcs/0055-retired-committers.md).
